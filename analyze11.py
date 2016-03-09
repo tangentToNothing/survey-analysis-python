@@ -13,16 +13,19 @@ def main():
 		elif(arg == "-h"):
 			print("analyze11.py -i <inputtext>")
 
-	projector_items = ['projection','projector','projector,','projection']
-	whiteboard_blackboard_items = ['board','whiteboard','blackboard','blackboard,','whiteboard,','chalkboard']
-	marker_chalk_items = ['marker','markers','chalk','eraser','erasers']
-	HVAC_items = ['heating','heater','temperature', 'temperature control', 'thermostat','HVAC','hvac','Temperature']
-	furniture_items = ['desk','desks','lectern','lecterns','table','tables','blinds','podium','podiums']
-	display_items = ['display', 'screen', 'TV', 'tv']
-	scheduling_items = ['seats','seating','capacity','cap','schedule','scheduling']
-	design_items = ['cover','covering', 'blocking','blocks','obstruct','block']
+	projector_items = ['projection','projector','projector,','Projection','Projector','projectors','Projectors']
+	whiteboard_blackboard_items = ['board','whiteboard','blackboard','chalkboard','Board','Whiteboard','Blackboard','Chalkboard']
+	marker_chalk_items = ['marker','markers','chalk','eraser','erasers','Marker','Markers','Chalk','Eraser','Erasers']
+	HVAC_items = ['heating','heater','temperature', 'temperature', 'control', 'thermostat','HVAC','hvac','Temperature','Control','Thermostat','heat','Heat','Fan','fan','Heater','Heating','cooling','Cooling','AC','ac']
+	furniture_items = ['desk','desks','lectern','lecterns','table','tables','blinds','podium','podiums','Desk','Desks','Tables','Table','Lectern','Lecterns','Blinds','Podium','Podiums','Chair','chair','Chairs','chairs']
+	display_items = ['display', 'screen', 'TV', 'tv','Displays','Screens']
+	scheduling_items = ['seats','seating','capacity','cap','schedule','scheduling','Seats','Seating','crowded','Crowded','Schedule','Scheduling','Cap','Capacity']
+	design_items = ['cover','covering', 'blocking','blocks','obstruct','block','Cover','Covering','Blocking','Blocks','Block']
 	doccam_items = ['Document','camera','document']
 	computer_items = ['computer', 'computers','laptop','laptops','PC','pc','PCs','Laptop','Computer']
+	semindar_items = ['seminar','seminars','Seminars','Seminar']
+	old_tech_items = ['VCR','vcr','overhead','transparency']
+
 
 	projector_count = 0
 	whiteboard_blackboard_count = 0
@@ -34,6 +37,8 @@ def main():
 	design_count = 0
 	doccam_count = 0
 	computer_count = 0
+	seminar_count = 0
+	old_tech_count = 0
 
 	text = []
 	input1 = open(inputfile)
@@ -61,6 +66,10 @@ def main():
 			doccam_count+=1
 		if word in computer_items:
 			computer_count+=1
+		if word in semindar_items:
+			seminar_count+=1
+		if word in old_tech_items:
+			old_tech_count+=1	
 
 
 	print("There were:\n")
@@ -74,7 +83,9 @@ def main():
 	print(str(design_count) + " design items")
 	print(str(doccam_count) + " document camera items")
 	print(str(computer_count) + " computer items")
-	print("\nThere were " + str(projector_count + whiteboard_blackboard_count + marker_chalk_count + HVAC_count + furniture_count + display_count + scheduling_count + design_count + doccam_count + computer_count) + " items")
+	print(str(seminar_count) + " seminar items")
+	print(str(old_tech_count) + " old tech items")
+	print("\nThere were " + str(projector_count + whiteboard_blackboard_count + marker_chalk_count + HVAC_count + furniture_count + display_count + scheduling_count + design_count + doccam_count + computer_count + seminar_count + old_tech_count) + " items")
 	print("\nThere were " + str(len(array_text)) + " words")
 
 main()
